@@ -20,6 +20,6 @@ elif [ $1 = "--help" ] || [ $1 = "-h" ] ; then
 	echo "[--log || -l] <number> - utwórz x plików log"
 	echo "[--help || -h] - wyświetl tą wiadomość"
 elif [ $1 = "--init" ] ; then
-	$(git clone https://github.com/baldir0/NarzedziaPracyWBranzyITLab4.git)
-	PATH=$PATH:/($pwd)
+	git clone https://github.com/baldir0/NarzedziaPracyWBranzyITLab4.git
+	PATH=$PATH:$(pwd)
 fi
