@@ -6,12 +6,13 @@ elif [ $1 = "--logs" ] || [ $1 = "-l" ] ; then
 	iterator=0
 	max=100
 	
-	if [ ! -z $2] ; then
+	if [ ! -z $2 ] ; then
 		max=$2
 	fi
 	
 	while [ $iterator -lt $max ] ; do
-		echo log$iterator.txt $(date) > log$iterator.txt
+		mkdir log$iterator
+		echo log$iterator.txt $0 $(date) > log$iterator/log$iterator.txt
 		iterator=$[iterator + 1]
 	done
 elif [ $1 = "--help" ] || [ $1 = "-h" ] ; then
